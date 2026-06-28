@@ -74,7 +74,14 @@ public class EmployeeServiceImpl implements  EmployeeService{
     @Override
     @CacheEvict(cacheNames = "employees", key = "#employeeId")
     public void deleteEmployee(String empId) {
-
+        Long employeeId = Long.valueOf(empId);
+        if(employeeRepository.existsById(employeeId)){
+            employeeRepository.deleteById(employeeId);
+            log.info("employe record deleted for ID :{}", empId);
+        }
+        else {
+            log.info("employe record not found for ID :{}", empId);
+        }
     }
 
 
