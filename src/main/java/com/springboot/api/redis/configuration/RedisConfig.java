@@ -45,15 +45,11 @@ public class RedisConfig {
                 .disableCachingNullValues();
 
         return RedisCacheManager.builder(connectionFactory)
-
                 .cacheDefaults(config)
-
                 .transactionAware()
-
                 .build();
+        }
 
-    }
-
-}
+   }
 
 
