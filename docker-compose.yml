@@ -7,8 +7,9 @@ services:
     ports:
       - "28017:27017"
 
-  app:
-    image: employee-service:1.0
+  employeeservice:
+    build: .
+    container_name: employee_service
     ports:
       - "8081:8081"
     depends_on:
