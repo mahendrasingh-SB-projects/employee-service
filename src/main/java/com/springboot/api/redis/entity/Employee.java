@@ -31,7 +31,7 @@ public class Employee implements Serializable {
 
     private String email;
 
-    private Long contactNumber;
+    private String contactNumber;
     private String profession;
     private String city;
     private String state;

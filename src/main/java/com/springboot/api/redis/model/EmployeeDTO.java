@@ -30,9 +30,8 @@ public class EmployeeDTO implements Serializable {
     @Size(min = 3, max = 20, message = "name should be of length {} to {} characters")
     private String name;
 
-    @NotBlank(message = "contact number is required")
-    @Size(min = 10, max = 10, message = "contact number should be of length {} to {} characters")
-    private Long contactNumber;
+    @NotBlank(message = "contactNumber is required")
+    private String contactNumber;
 
     @Email
     @NotBlank(message = "email is required")

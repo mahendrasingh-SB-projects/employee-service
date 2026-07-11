@@ -40,14 +40,14 @@ public class EmployeeServiceImpl implements  EmployeeService{
     }
 
     @Override
-    @Cacheable(cacheNames = "employees", key = "#employeeId")
-    public EmployeeDTO getEmployee(Long employeeId) {
+    @Cacheable(cacheNames = "employees", key = "#id")
+    public EmployeeDTO getEmployee(Long id) {
 
-        log.info("fetching employee record for ID: {}", employeeId);
+        log.info("fetching employee record for ID: {}", id);
 
         EmployeeDTO employeeDTO = null;
         log.info("calling employee repo to fetch from DB.");
-        Optional<Employee> employeeOps = employeeRepository.findById(employeeId);
+        Optional<Employee> employeeOps = employeeRepository.findById(id);
         if(employeeOps.isPresent()){
             log.info("employee record fetched from DB.");
             employeeDTO = utility.convertToModel(employeeOps.get());
