@@ -1,0 +1,10 @@
+version: "1.0"
+
+
+services:
+  app:
+    image: employee-redis-docker:1.0
+    ports:
+      - 9090:9090
+    environment:
+      SERVER_PORT: 9090
