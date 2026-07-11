@@ -35,11 +35,11 @@ public class EmployeeController {
         return employeeService.getAllEmployee();
     }
 
-    @GetMapping("/empId")
-    public EmployeeDTO getEmployeeById(@PathVariable(name = "empId", required = true) Long empId){
+    @GetMapping("/{id}")
+    public EmployeeDTO getEmployeeById(@PathVariable(name = "id", required = true) Long id){
         log.info("GET : employee details by employee ID");
 
-        return  employeeService.getEmployee(empId);
+        return  employeeService.getEmployee(id);
     }
 
     @PutMapping
